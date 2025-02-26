@@ -35,27 +35,6 @@ async function replaceTextSequent(filePath, placeholders, replacements) {
   }
 }
 
-async function replaceTextObject(filePath, replacements) {
-  try {
-    const buffer = fs.readFileSync(filePath);
-    const zip = new PizZip(buffer);
-    const doc = new Docxtemplater(zip, {
-      paragraphLoop: true,
-      linebreaks: true,
-    });
-
-    doc.setData(replacements);
-    doc.render();
-
-    const updatedBuffer = doc.getZip().generate({ type: "nodebuffer" });
-
-    fs.writeFileSync("updated1.docx", updatedBuffer);
-    console.log("Document updated successfully.");
-  } catch (error) {
-    console.error("Error updating document:", error);
-  }
-}
-
 function extractPlaceholders(filePath) {
   try {
     const buffer = fs.readFileSync(filePath);
@@ -98,14 +77,6 @@ const replacements = [
   "Another Value 2",
   "Yet another Value 3",
 ];
-
-// replaceTextObject("service_invoice.docx", {
-//   "Enter amount": "001C000001",
-//   "Enter description 1": "2024-09-06",
-//   "Enter description 2": "2024-09-07",
-//   "Company Name": "Acme Inc",
-//   Name: "John Doe",
-// }).then(() => {});
 
 replaceTextSequent("service_index.docx", placeholders, replacements).then(
   () => {

@@ -9,14 +9,20 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@noble/ed25519": "^2.2.3",
     "@pspdfkit/nodejs": "^0.0.5",
     "crypto": "^1.0.1",
     "docx": "^8.5.0",
     "docx-pdf": "^0.0.1",
     "docx-templates": "^4.13.0",
     "docxtemplater": "^3.50.0",
+    "exceljs": "^4.4.0",
     "fs": "^0.0.1-security",
+    "js-yaml": "^4.1.0",
+    "libreoffice-convert": "^1.6.0",
     "mammoth": "^1.8.0",
+    "node-signpdf": "^3.0.0",
+    "path": "^0.12.7",
     "pdf-lib": "^1.17.1",
     "pizzip": "^3.1.7"
   }

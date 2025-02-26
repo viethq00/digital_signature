@@ -6,8 +6,8 @@ libre.convertAsync = require("util").promisify(libre.convert);
 
 async function main() {
   const ext = "pdf"; // Output extension.
-  const inputPath = path.join(__dirname, "/example.doc");
-  const outputPath = path.join(__dirname, `/example.${ext}`);
+  const inputPath = path.join(__dirname, "/updated1.docx");
+  const outputPath = path.join(__dirname, `/updated1.${ext}`);
 
   // Read the input file.
   const docxBuf = await fs.readFile(inputPath);
